@@ -5,7 +5,7 @@ import { Button } from 'react-native-paper'
 import { useState } from 'react'
 const ActivityCard = ({activity,index}) => {
     const activ=activity?.activities
-    console.log(activity.activities)
+    // console.log(activity.activities)
     const [visible,setvisible]=useState(false);
     const desc = activity?.description
     // const fetchPhotos = async () => {
@@ -50,7 +50,7 @@ const ActivityCard = ({activity,index}) => {
           }}
         >
    <Text
-   key={index}
+  //  key={index}
    style={{
        fontSize: 17,
        fontFamily: "roundedBold",
@@ -64,7 +64,7 @@ const ActivityCard = ({activity,index}) => {
       * {i.name}
       </Text>
     <Text
-    key={index}
+    // key={index}
     style={{
         fontSize: 15,
         fontFamily: "roundedBold",
@@ -78,7 +78,7 @@ const ActivityCard = ({activity,index}) => {
         {i.description}
        </Text>
        <Text
-    key={index}
+    // key={index}
     style={{
         fontSize: 15,
         fontFamily: "roundedBold",

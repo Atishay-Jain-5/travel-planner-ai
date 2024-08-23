@@ -42,7 +42,7 @@ const Login = () => {
             fontSize: 17,
             fontFamily: "roundedBold",
             color: "white",
-            marginTop: 10,
+            marginTop: 30,
           }}
         >
           Welcome to AI Travel Planner, your personal guide to the world’s most

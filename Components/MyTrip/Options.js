@@ -1,7 +1,7 @@
 import { View, Text, TouchableOpacity } from 'react-native';
 import React from 'react';
 
-const Options = ({ title, desc,userChoice }) => {
+const Options = ({ title, desc,userChoice,icon }) => {
   return (
     <View
       style={[{
@@ -14,6 +14,11 @@ const Options = ({ title, desc,userChoice }) => {
         marginBottom: 20, 
       },userChoice==title&&{borderWidth:3}]}
     >
+      <View style={{display:"flex",flexDirection:"row",justifyContent:"space-between",alignItems:"center",gap:10}}>
+
+   
+      <View style={{display:"flex",flexDirection:"column",}}>
+
       <Text
         style={{
           fontSize: 20,
@@ -21,7 +26,7 @@ const Options = ({ title, desc,userChoice }) => {
           color: "black",
           marginBottom: 5, 
         }}
-      >
+        >
         {title}
       </Text>
       <Text
@@ -30,9 +35,21 @@ const Options = ({ title, desc,userChoice }) => {
           fontFamily: "rounded",
           color: "black",
         }}
-      >
+        >
         {desc}
       </Text>
+        </View>
+        <Text
+        style={{
+          fontSize: 35,
+          fontFamily: "roundedBold",
+          color: "black",
+          marginBottom: 5, 
+        }}
+        >
+        {icon}
+      </Text>
+        </View>
     </View>
   );
 };

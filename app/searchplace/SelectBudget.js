@@ -15,6 +15,7 @@ const SelectBudget = () => {
     const { tripData, setTripData } = useContext(CreateTripCon);
     const titles=["Affordable","Moderate","Luxury"]
   const desc = ["Keep the cost at Minimum ","Keeping the cost on the average side","Can Spend without restrictons"]
+  const icons=["💲","💵","💸"]
     const navigation = useNavigation();
     const [userChoice,setUserChoice]=useState()
     useEffect(() => {
@@ -75,12 +76,12 @@ const SelectBudget = () => {
       >
         <FlatList
         style={{width:"100%"}}
-          data={titles.map((title, index) => ({ title, desc: desc[index] }))}
+          data={titles.map((title, index) => ({ title, desc: desc[index] ,icon:icons[index]}))}
           // keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
             <TouchableOpacity onPress={()=>setUserChoice(item.title)} style={{width:"100%"}}>
 
-            <Options title={item.title} desc={item.desc} userChoice={userChoice} />
+            <Options title={item.title} desc={item.desc} userChoice={userChoice} icon={item.icon}/>
             </TouchableOpacity>
           )}
         />

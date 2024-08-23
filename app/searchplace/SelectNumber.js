@@ -14,6 +14,7 @@ const SelectNumber = () => {
   const [userChoice,setUserChoice]=useState()
   const { tripData, setTripData } = useContext(CreateTripCon);
   const titles=["Just Me","A Couple","Family","Friends"]
+  const icons=["🧗","👥","👨‍👩‍👧","🤝"]
   const desc = ["A sole traveler in exploration","Two travelers in tandem","A group of fun-loving adventurers","A bunch of thrill-seekers"]
   useEffect(() => {
     navigation.setOptions({
@@ -75,12 +76,12 @@ const SelectNumber = () => {
       >
         <FlatList
          style={{width:"100%"}}
-          data={titles.map((title, index) => ({ title, desc: desc[index] }))}
+          data={titles.map((title, index) => ({ title, desc: desc[index] ,icon:icons[index]}))}
           // keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) => (
             <TouchableOpacity onPress={()=>setUserChoice(item.title)} style={{width:"100%"}}>
 
-            <Options title={item.title} desc={item.desc} userChoice={userChoice} />
+            <Options title={item.title} desc={item.desc} userChoice={userChoice} icon={item.icon} />
             </TouchableOpacity>
           )}
         />
